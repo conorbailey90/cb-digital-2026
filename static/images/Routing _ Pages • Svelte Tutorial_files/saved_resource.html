@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://ja8uc6leuxy7b8b8npjdj5ioztwwmt-5lbx-%2D5173-%2D365214aa.local-corp.webcontainer-api.io/?theme=dark -->
+<html lang="en" class="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<link rel="icon" href="https://ja8uc6leuxy7b8b8npjdj5ioztwwmt-5lbx--5173--365214aa.local-corp.webcontainer-api.io/favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="color-scheme" content="dark light">
+		
+
+		<!-- duplication with svelte.dev/static/shared.css needed, else styles aren't applied during local dev -->
+		<link rel="stylesheet" href="./shared.css">
+	</head>
+	<body>
+		<div style="display: contents"><!--[--><!--[--><!----><!----><nav><a href="https://ja8uc6leuxy7b8b8npjdj5ioztwwmt-5lbx--5173--365214aa.local-corp.webcontainer-api.io/">home</a> <a href="https://ja8uc6leuxy7b8b8npjdj5ioztwwmt-5lbx--5173--365214aa.local-corp.webcontainer-api.io/about">about</a></nav> <h1>home</h1> <p>this is the home page.</p><!----><!----><!----><!--]--> <!--[!--><div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0; top: 0; clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px"><!----></div><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_dev = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/node_modules/@sveltejs/kit/src/runtime/client/entry.js"),
+						import("/@fs/home/ja8uc6leuxy7b8b8npjdj5ioztwwmt-5lbx/.svelte-kit/generated/client/app.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+
+		<script>
+			const theme = new URL(window.location).searchParams.get('theme');
+
+			document.documentElement.classList.remove('light', 'dark');
+			document.documentElement.classList.add(theme || 'light');
+		</script>
+	
+
+<script type="module" src="./__client.js"></script></body></html>
