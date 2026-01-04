@@ -37,7 +37,7 @@
     });
 </script>
 
-<section data-bg-color="#000000" data-text-color="#FFFFFF">
+<section id="home" data-bg-color="#000000" data-text-color="#FFFFFF">
     <Container>
         <div class="intro">
             <h1 style="font-size: 5rem;" class="morganite">CB DIGITAL</h1><br/>

@@ -1,7 +1,7 @@
 <script>
     import Container from "./Container.svelte";
     const tabs = [
-        {name: 'Home', link: '/'},
+        {name: 'Home', link: '#home'},
         {name: 'About', link: '#about'},
         {name: 'projects', link: '#projects'},
 
