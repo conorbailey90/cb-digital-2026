@@ -48,15 +48,11 @@
 <style>
     section{
         margin: 2rem 0;
+        padding: 80px 0 2rem 0;
         display: flex;
         justify-content: center;
     }
-    .line{
-        height: 1px;
-        width: 100%;
-        background-color: white;
-        grid-column: span 12;
-    }
+  
 
     .sticky_container{
         position: sticky;

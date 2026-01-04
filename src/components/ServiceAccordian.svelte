@@ -121,92 +121,173 @@ import { slide } from "svelte/transition";
 
 <style>
   .container {
-  grid-column: span 12;
+    grid-column: span 12;
+    margin-top: 1rem;
+  }
 
-  margin-top: 1rem;
-}
+  .accordion {
+    border-top: 1px solid #ffffff;
+  }
 
-.accordion {
-  border-top: 1px solid #ffffff;
-}
+  .accordion-item {
+    border-bottom: 1px solid #ffffff;
+  }
 
-.accordion-item {
-  border-bottom: 1px solid #ffffff;
-}
+  .accordion-header {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    text-align: left;
+  }
 
-.accordion-header {
-  width: 100%;
-  padding: 1.5rem 0;
-  display: flex;
-  align-items: center; /* Vertically centers the <p> and chevron */
-  justify-content: space-between;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.125rem;
-  text-align: left;
-}
+  .accordion-header p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+  }
 
-.accordion-header p {
-  display: flex; /* Makes icon and title flex items */
-  align-items: center; /* Vertically centers icon with title text */
-  gap: 1rem; /* Horizontal space between icon and title (adjust as needed) */
-  margin: 0; /* Reset any default p margins */
+  .accordion-header svg:first-of-type {
+    flex-shrink: 0;
+    display: inline-block;
+  }
 
+  .accordion-header:hover {
+    opacity: 0.7;
+  }
 
-}
+  .chevron {
+    color: #ffffff;
+    transition: transform 200ms ease;
+    flex-shrink: 0;
+  }
 
-.accordion-header svg:first-of-type { /* Targets the service icon SVGs */
-  flex-shrink: 0; /* Prevents icon from shrinking */
-  display: inline-block; /* Ensures consistent inline rendering */
-}
+  .chevron.rotated {
+    transform: rotate(180deg);
+  }
 
-.accordion-header:hover {
-  opacity: 0.7;
-}
+  .accordion-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: .5rem;
+    padding-bottom: 1.5rem;
+    overflow: hidden;
+  }
 
-.chevron {
-  color: #ffffff;
-  transition: transform 200ms ease;
-  flex-shrink: 0; /* Prevents chevron from shrinking */
-}
+  .service__description {
+    grid-column: span 5;
+  }
 
-.chevron.rotated {
-  transform: rotate(180deg);
-}
+  .included {
+    grid-column: 7 / span 6;
+  }
 
-.accordion-content {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: .5rem;
-  padding-bottom: 1.5rem;
-  overflow: hidden;
-}
+  .included ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.service__description{
-  grid-column: span 5;
-}
+  .included li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
 
-.included{
-  grid-column: 7 / span 6;
-}
+  .included li:last-child {
+    margin-bottom: 0;
+  }
 
-.included ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .accordion-header {
+      font-size: 1rem;
+      padding: 1.25rem 0;
+    }
 
-.included li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Adjust space between check and text as needed */
-  margin-bottom: 0.5rem; /* Space between list items */
-  color: #ffffff;
-}
+    .accordion-header p {
+      gap: 0.75rem;
+    }
 
+    .accordion-content {
+      gap: 1rem;
+    }
 
-.included li:last-child {
-  margin-bottom: 0;
-}
+    .service__description {
+      grid-column: span 6;
+    }
+
+    .included {
+      grid-column: 7 / span 6;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .accordion-header {
+      font-size: 0.9rem;
+      padding: 1rem 0;
+    }
+
+    .accordion-header p {
+      gap: 0.5rem;
+    }
+
+    .accordion-header p span {
+      font-size: 0.875rem;
+    }
+
+    .accordion-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .service__description {
+      grid-column: span 1;
+    }
+
+    .included {
+      grid-column: span 1;
+    }
+
+    .included li {
+      font-size: 0.875rem;
+      align-items: flex-start;
+    }
+
+    /* Make icon smaller on mobile */
+    .accordion-header svg:first-of-type {
+      width: 18px;
+      height: 18px;
+    }
+
+    .chevron {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .accordion-header {
+      font-size: 0.85rem;
+    }
+
+    .accordion-header p {
+      gap: 0.5rem;
+    }
+
+    .included li {
+      font-size: 0.8rem;
+    }
+  }
 </style>

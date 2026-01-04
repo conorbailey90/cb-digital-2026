@@ -51,7 +51,7 @@
                     <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
                         <div class="image-wrapper">
                             <div class="image-container">
-                                <img src="{base}/images/{project.image}" alt="{project.title}" loading="eager">
+                                <img src="{base}/images/{project.image}" alt="{project.title}">
                             </div>
                             <div class="overlay">
                                 <span class="view-project">View Project →</span>
@@ -77,24 +77,16 @@
     section {
         display: flex;
         justify-content: center;
-        padding: 2rem 0;
+        padding: 80px 0 2rem 0;
     }
 
     .header {
         display: flex;
       
         grid-column: span 12;
-        margin-bottom: 1rem;
+ 
     }
     
-    .line {
-        height: 1px;
-        width: 100%;
-        background: white;
-        grid-column: span 12;
-        margin-bottom: 2rem;
-    }
-
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -209,7 +201,10 @@
     @media (max-width: 1024px) {
         .projects-grid {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: .5rem;
+        }
+        .project-card{
+            margin-bottom: 1rem;
         }
     }
 
@@ -232,6 +227,7 @@
 
         .project-title {
             font-size: 1.1rem;
+        
         }
     }
 </style>

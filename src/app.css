@@ -40,3 +40,10 @@
 html, body{
     background-color: var(--bg-primary);
 }
+
+  .line{
+        height: 1px;
+        width: 100%;
+        background-color: var(--text-primary);
+        grid-column: span 12;
+    }

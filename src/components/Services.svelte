@@ -3,7 +3,7 @@
        import ServiceAccordian from "./ServiceAccordian.svelte";
 </script>
 
-<section data-bg-color="#000000">
+<section id="services" data-bg-color="#000000" data-text-color="#FFFFFF">
 
     <Container>
         <h4>Services</h4>
@@ -12,8 +12,6 @@
         <ServiceAccordian />
     </Container>
     
-  
-
 </section>
    
 
@@ -23,18 +21,79 @@
         padding-top: 80px;
         justify-content: center;
         position: relative;
-        width: 100%
+        width: 100%;
     }
 
-    .line{
-        height: 1px;
-        width: 100%;
-        background-color: white;
+    h4 {
         grid-column: span 12;
     }
 
-    h2{
+    .line {
+        grid-column: span 12;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: 2rem;
+    }
+
+    h2 {
         grid-column: span 5;
         text-transform: uppercase;
+        line-height: 1.3;
+        margin-bottom: 2rem;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+        section {
+            padding-top: 60px;
+        }
+
+        h2 {
+            grid-column: span 7;
+            font-size: 1.5rem;
+        }
+
+        .line {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        section {
+            padding-top: 4rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            grid-column: span 12;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .line {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+        section {
+            padding-top: 3rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
     }
 </style>

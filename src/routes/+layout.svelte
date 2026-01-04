@@ -4,11 +4,13 @@
 	import SmoothScroll from '../components/SmoothScroll.svelte';
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
+
 	
 	let { children } = $props();
 </script>
 
 <svelte:head>
+	<title>CB Digital</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

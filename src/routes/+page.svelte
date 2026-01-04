@@ -4,6 +4,8 @@
     import About from "../components/About.svelte";
     import Services from '../components/Services.svelte';
     import Projects from '../components/Projects.svelte';
+    import Prices from '../components/Prices.svelte';
+	import Contact from '../components/Contact.svelte';
 
     // @ts-ignore
     let sections = [];
@@ -48,6 +50,8 @@
 <About />
 <Services />
 <Projects />
+<Prices />
+<Contact />
 
 <style>
     :global(body) {

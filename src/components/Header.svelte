@@ -1,10 +1,10 @@
 <script>
     import Container from "./Container.svelte";
     const tabs = [
-        {name: 'Home', link: '#home'},
-        {name: 'About', link: '#about'},
-        {name: 'projects', link: '#projects'},
-
+        {name: 'Home', link: '/#home'},
+        {name: 'About', link: '/#about'},
+        {name: 'Services', link: '/#services'},
+        {name: 'Projects', link: '/#projects'},
     ]
 </script>
 
@@ -25,6 +25,15 @@
     .logo{
         align-self: center;
         grid-column: span 6;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+    }
+
+    ul{
+        display: flex;
     }
   
 
