@@ -3,7 +3,7 @@
 
     import { onMount } from 'svelte';
     import Container from "./Container.svelte";
-     import { base } from '$app/paths';
+    import { base } from '$app/paths';
 
     let images = [
         '/images/axios-mockup.png',
@@ -35,22 +35,7 @@
             }).format(new Date());
         }, 60000);
 
-        // Cycle images every 5 seconds
-        // const imageInterval = setInterval(() => {
-        //     // Step 1: Fade out current image
-        //     image.style.opacity = '0';
-            
-        //     // Step 2: After fade out completes, change the image source
-        //     setTimeout(() => {
-        //         currentImageIndex = (currentImageIndex + 1) % images.length;
-                
-        //         // Step 3: Immediately after changing source, fade back in
-        //         setTimeout(() => {
-        //             image.style.opacity = '1';
-        //         }, 50); // Small delay to ensure the image src has updated
-        //     }, 500); // Wait for the fade out transition (matches CSS transition)
-        // }, 5000);
-
+       
         // Cleanup on unmount
         return () => {
             clearInterval(timeInterval);
@@ -59,7 +44,7 @@
     });
 </script>
 
-<section data-bg-color="#000000">
+<section data-bg-color="#000000" data-text-color="#FFFFFF">
     <Container>
         <div class="intro">
             <h1 style="font-size: 5rem;" class="morganite">CB DIGITAL</h1><br/>
@@ -75,7 +60,7 @@
         </div>       
 
         <div class="projects_preview">
-            <img src="{base}/images/Hero.avif" alt="..." />
+            <img src="{base}/images/omg1.avif" alt="..." />
         </div>
     </Container>
 </section>

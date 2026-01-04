@@ -2,16 +2,15 @@
   import { onMount } from 'svelte';
   import Lenis from 'lenis';
 
-    /**
-	 * @type {Lenis}
-    */
-  let lenis;
+  let { children } = $props();
+
+  /**
+   * @type {Lenis | null}
+   */
+  let lenis = null;
 
   onMount(() => {
-    // Initialize Lenis
     lenis = new Lenis({
-    //   duration: 1.2,
-    //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
@@ -19,20 +18,23 @@
       infinite: false,
     });
 
-    // Animation frame loop
+    let rafId;
+
     /**
-	   * @param {number} time
-	*/
+     * @param {number} time
+     */
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
-    // Cleanup
     return () => {
-      lenis.destroy();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenis) lenis.destroy();
     };
   });
 </script>
+
+{@render children()}

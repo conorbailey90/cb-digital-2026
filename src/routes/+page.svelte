@@ -3,6 +3,7 @@
     import Hero from "../components/Hero.svelte";
     import About from "../components/About.svelte";
     import Services from '../components/Services.svelte';
+    import Projects from '../components/Projects.svelte';
 
     // @ts-ignore
     let sections = [];
@@ -15,10 +16,12 @@
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        console.log(entry.target.getAttribute('data-bg-color'))
+                    
                         const bgColor = entry.target.getAttribute('data-bg-color');
+                        const textColor = entry.target.getAttribute('data-text-color');
                         if (bgColor) {
-                            document.body.style.backgroundColor = bgColor;
+                            document.documentElement.style.setProperty('--bg-primary', bgColor);
+                            document.documentElement.style.setProperty('--text-primary', textColor);
                         }
                     }
                 });
@@ -44,6 +47,7 @@
 <Hero />
 <About />
 <Services />
+<Projects />
 
 <style>
     :global(body) {

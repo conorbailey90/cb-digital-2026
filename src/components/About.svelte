@@ -20,7 +20,7 @@
    
 </script>
 
-<section data-bg-color="#FF0000">
+<section data-bg-color="#FFFFFF" data-text-color="#161616">
 
     <Container>
 
