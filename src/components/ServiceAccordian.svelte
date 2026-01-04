@@ -191,12 +191,6 @@ import { slide } from "svelte/transition";
   grid-column: 7 / span 6;
 }
 
-.accordion-content p {
-  color: #ffffff;
-  margin: 0;
-
-}
-
 .included ul {
   list-style: none;
   padding: 0;
@@ -211,10 +205,6 @@ import { slide } from "svelte/transition";
   color: #ffffff;
 }
 
-.included li svg {
-  flex-shrink: 0; /* Prevents check from shrinking */
-  display: inline-block;
-}
 
 .included li:last-child {
   margin-bottom: 0;
