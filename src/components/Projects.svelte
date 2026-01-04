@@ -11,7 +11,7 @@
                 'Content Management System',
                 'Database'
             ],
-            image: 'bpc-mockup.png',
+            image: 'bpc-mockup.avif',
             link: 'https://baileys-construction-academy-m8ca.vercel.app/'
         },
         {
@@ -22,7 +22,7 @@
                 'Content Management System',
                 'Database'
             ],
-            image: 'fw-mockup.png',
+            image: 'fw-mockup.avif',
             link: 'https://www.faceworx.beauty/'
         },
         {
@@ -32,13 +32,13 @@
                 'Development',
                 'Educational / Tutorial'
             ],
-            image: 'axios-mockup.png',
+            image: 'axios-mockup.avif',
             link: 'https://www.youtube.com/watch?v=Fb0MCsdGGZ8&t=8s'
         },
     ]
 </script>
 
-<section data-bg-color="#000000" data-text-color="#FFFFFF">
+<section id="projects" data-bg-color="#000000" data-text-color="#FFFFFF">
     <Container>
         <div class="header">
             <h4>Projects</h4>
@@ -211,10 +211,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
-        .count {
-            font-size: 2.5rem;
-        }
     }
 
     /* Mobile */
@@ -229,10 +225,6 @@
             gap: 1rem;
         }
 
-        .project-count {
-            align-items: flex-start;
-        }
-
         .projects-grid {
             grid-template-columns: 1fr;
             gap: 3rem;
@@ -240,10 +232,6 @@
 
         .project-title {
             font-size: 1.1rem;
-        }
-
-        .count {
-            font-size: 2rem;
         }
     }
 </style>

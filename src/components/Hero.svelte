@@ -5,12 +5,6 @@
     import Container from "./Container.svelte";
     import { base } from '$app/paths';
 
-    let images = [
-        '/images/axios-mockup.png',
-        '/images/bpc-mockup.png',
-        '/images/fw-mockup.png'
-    ];
-
     let image;
 
     let ukTime = $state(new Intl.DateTimeFormat('en-GB', {
@@ -20,7 +14,6 @@
         hour12: false
     }).format(new Date()));
 
-    let currentImageIndex = $state(0);
 
     onMount(() => {
         image = document.querySelector('.projects_preview > img')
@@ -54,13 +47,10 @@
             <div style="display: flex;">
                 <p>London / Essex, UK</p><div class="dot"></div><p>{ukTime}</p>
             </div>
-           
-         
-
         </div>       
 
         <div class="projects_preview">
-            <img src="{base}/images/omg1.avif" alt="..." />
+            <img src="{base}/images/Hero.avif" alt="..." />
         </div>
     </Container>
 </section>

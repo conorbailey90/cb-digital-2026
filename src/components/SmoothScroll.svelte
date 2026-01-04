@@ -16,14 +16,19 @@
       wheelMultiplier: 1,
       touchMultiplier: 2,
       infinite: false,
+      anchors: true
     });
 
+    /**
+	   * @type {number}
+	   */
     let rafId;
 
     /**
      * @param {number} time
      */
     function raf(time) {
+      // @ts-ignore
       lenis.raf(time);
       rafId = requestAnimationFrame(raf);
     }
