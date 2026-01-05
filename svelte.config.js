@@ -25,7 +25,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: dev ? '' : '/cb-digital-2026/'
+			base: dev ? '' : '/cb-digital-2026'
 		}
 	}
 };
