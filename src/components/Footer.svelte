@@ -2,11 +2,11 @@
     import Container from "./Container.svelte";
     
     const navigation = [
-        {name: 'Home', link: '/#home'},
-        {name: 'About', link: '/#about'},
-        {name: 'Services', link: '/#services'},
-        {name: 'Projects', link: '/#projects'},
-        {name: 'Contact', link: '/#contact'},
+        {name: 'Home', link: '#home'},
+        {name: 'About', link: '#about'},
+        {name: 'Services', link: '#services'},
+        {name: 'Projects', link: '#projects'},
+        {name: 'Contact', link: '#contact'},
     ];
 
     const socials = [

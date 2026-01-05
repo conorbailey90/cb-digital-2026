@@ -7,7 +7,7 @@
     {
       id: '01',
       name: 'Essential',
-      price: '£800',
+      price: '£500',
       timeline: '2-3 weeks',
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#f4a484" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192ZM112,88a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H120A8,8,0,0,1,112,88Zm0,40a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H120A8,8,0,0,1,112,128Zm0,40a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H120A8,8,0,0,1,112,168ZM72,96a8,8,0,1,1-8-8A8,8,0,0,1,72,96Zm0,40a8,8,0,1,1-8-8A8,8,0,0,1,72,136Zm0,40a8,8,0,1,1-8-8A8,8,0,0,1,72,176Z"></path></svg>',
       description: 'Perfect for small businesses and startups looking to establish a professional online presence. A clean, responsive website that showcases your brand with essential features and functionality.',
