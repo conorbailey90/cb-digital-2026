@@ -1,12 +1,12 @@
 <script>
     import Container from "./Container.svelte";
-    
-    const navigation = [
-        {name: 'Home', link: '#home'},
-        {name: 'About', link: '#about'},
-        {name: 'Services', link: '#services'},
-        {name: 'Projects', link: '#projects'},
-        {name: 'Contact', link: '#contact'},
+    import { base } from "$app/paths";
+   const navigation = [
+        {name: 'Home', link: `${base}/#home`},
+        {name: 'About', link: `${base}/#about`},
+        {name: 'Services', link: `${base}/#services`},
+        {name: 'Projects', link: `${base}/#projects`},
+        {name: 'Contact', link: `${base}/#contact`},
     ];
 
     const socials = [
