@@ -1,6 +1,4 @@
 <script>
-// @ts-nocheck
-
     import { onMount } from 'svelte';
     import Container from "./Container.svelte";
     import { base } from '$app/paths';
@@ -14,11 +12,10 @@
         hour12: false
     }).format(new Date()));
 
-
     onMount(() => {
         image = document.querySelector('.projects_preview > img')
 
-        // Update time every 60 seconds (HH:MM)
+        // Update time every 30 seconds (HH:MM)
         const timeInterval = setInterval(() => {
             ukTime = new Intl.DateTimeFormat('en-GB', {
                 timeZone: 'Europe/London',
@@ -26,7 +23,7 @@
                 minute: '2-digit',
                 hour12: false
             }).format(new Date());
-        }, 60000);
+        }, 30000);
 
        
         // Cleanup on unmount
@@ -98,8 +95,8 @@
     }
 
     .projects_preview {
-        left: -5%;
-        width: 110%;
+        /* left: -5%; */
+        width: 100%;
         position: relative;
         grid-column: span 12;
         height: 400px;

@@ -28,7 +28,10 @@
     font-style: normal;
     list-style: none;
 
+}
 
+secrion{
+    overflow: hidden;
 }
 
 .morganite{

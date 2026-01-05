@@ -48,36 +48,35 @@
 </script>
 
 <section>
-<div class="container">
-  <div class="pricing-grid">
-    {#each packages as pkg}
-      <div class="pricing-card">
-        <div class="card-header">
-          <div class="title-row">
-            {@html pkg.icon}
-            <h3>{pkg.name}</h3>
-          </div>
-          <div class="price">{pkg.price}</div>
-          <div class="timeline">{pkg.timeline}</div>
+    <div class="container">
+    <div class="pricing-grid">
+        {#each packages as pkg}
+        <div class="pricing-card">
+            <div class="card-header">
+            <div class="title-row">
+                {@html pkg.icon}
+                <h3>{pkg.name}</h3>
+            </div>
+            <div class="price">{pkg.price}</div>
+            <div class="timeline">{pkg.timeline}</div>
+            </div>
+            
+            <div class="card-description">
+            <p>{pkg.description}</p>
+            </div>
+            
+            <div class="card-features">
+            <ul>
+                {#each pkg.features as feature}
+                <li>{@html check} {feature}</li>
+                {/each}
+            </ul>
+            </div>
         </div>
-        
-        <div class="card-description">
-          <p>{pkg.description}</p>
-        </div>
-        
-        <div class="card-features">
-          <ul>
-            {#each pkg.features as feature}
-              <li>{@html check} {feature}</li>
-            {/each}
-          </ul>
-        </div>
-      </div>
-    {/each}
-  </div>
-</div>
+        {/each}
+    </div>
+    </div>
 </section>
-
 
 <style>
 
@@ -85,11 +84,12 @@
         display: flex;
         justify-content: center;
     }
-  .container {
-    width: 95%;
-    grid-column: span 12;
-    margin-top: 1rem;
-  }
+
+    .container {
+        width: 95%;
+        grid-column: span 12;
+        margin-top: 1rem;
+    }
 
   .pricing-grid {
     display: grid;
@@ -102,7 +102,6 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-
   }
 
   .pricing-card:last-child {

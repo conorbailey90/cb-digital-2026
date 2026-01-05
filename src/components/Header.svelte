@@ -6,6 +6,7 @@
         {name: 'About', link: `${base}/#about`},
         {name: 'Services', link: `${base}/#services`},
         {name: 'Projects', link: `${base}/#projects`},
+        {name: 'Contact', link: `${base}/#contact`},
     ]
 </script>
 
@@ -20,7 +21,7 @@
         width: 100%;
         height: 60px;
         z-index: 1;
-      
+        overflow: hidden;
     }
 
     .logo{
