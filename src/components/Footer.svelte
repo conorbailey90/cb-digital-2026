@@ -237,7 +237,7 @@
             <div class="footer-bottom">
                 <p>&copy; {currentYear} CB Digital. All rights reserved.</p>
                 <p>
-                    Designed & Built by <a href="{base}/#home">CB Digital</a>
+                    Designed & Built by CB Digital
                 </p>
             </div>
         </div>
