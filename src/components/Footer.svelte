@@ -1,5 +1,6 @@
 <script>
     import Container from "./Container.svelte";
+    import { base } from "$app/paths";
     
     const navigation = [
         {name: 'Home', link: '/#home'},
@@ -236,7 +237,7 @@
             <div class="footer-bottom">
                 <p>&copy; {currentYear} CB Digital. All rights reserved.</p>
                 <p>
-                    Designed & Built by <a href="/#home">CB Digital</a>
+                    Designed & Built by <a href="{base}/#home">CB Digital</a>
                 </p>
             </div>
         </div>
