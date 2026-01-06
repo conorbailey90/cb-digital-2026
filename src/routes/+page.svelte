@@ -6,44 +6,6 @@
     import Projects from '../components/Projects.svelte';
     import Prices from '../components/Prices.svelte';
 	import Contact from '../components/Contact.svelte';
-
-    // @ts-ignore
-    let sections = [];
-    
-    onMount(() => {
-          // @ts-ignore
-        sections = document.querySelectorAll('section[data-bg-color]');
-        
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                    
-                        const bgColor = entry.target.getAttribute('data-bg-color');
-                        const textColor = entry.target.getAttribute('data-text-color');
-                        if (bgColor) {
-                            document.documentElement.style.setProperty('--bg-primary', bgColor);
-                            document.documentElement.style.setProperty('--text-primary', textColor);
-                        }
-                    }
-                });
-            },
-            {
-                threshold: 0.5 // Section needs to be 50% visible to trigger
-            }
-        );
-
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-
-        return () => {
-              // @ts-ignore
-            sections.forEach((section) => {
-                observer.unobserve(section);
-            });
-        };
-    });
 </script>
 
 <Hero />

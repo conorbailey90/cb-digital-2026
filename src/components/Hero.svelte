@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from 'svelte';
     import Container from "./Container.svelte";
     import { base } from '$app/paths';
@@ -12,10 +14,11 @@
         hour12: false
     }).format(new Date()));
 
+
     onMount(() => {
         image = document.querySelector('.projects_preview > img')
 
-        // Update time every 30 seconds (HH:MM)
+        // Update time every 60 seconds (HH:MM)
         const timeInterval = setInterval(() => {
             ukTime = new Intl.DateTimeFormat('en-GB', {
                 timeZone: 'Europe/London',
@@ -23,7 +26,7 @@
                 minute: '2-digit',
                 hour12: false
             }).format(new Date());
-        }, 30000);
+        }, 60000);
 
        
         // Cleanup on unmount
@@ -67,8 +70,8 @@
     }
 
     .intro h1 {
-        font-size: 5rem;
-        background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #fcfcfc 100%);
+        font-size: 6rem;
+        background: linear-gradient(to top, #949494 0%, #e7e7e7 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -76,6 +79,7 @@
 
     .intro h3 {
        text-transform: uppercase;
+        text-wrap: balance;
     }
   
     .location-time {
@@ -95,8 +99,8 @@
     }
 
     .projects_preview {
-        /* left: -5%; */
-        width: 100%;
+        left: -5%;
+        width: 110%;
         position: relative;
         grid-column: span 12;
         height: 400px;
@@ -128,16 +132,14 @@
 
     /* Tablet */
     @media (max-width: 1024px) {
-        section {
-            padding-top: 60px;
-        }
+ 
 
         .intro {
             grid-column: span 6;
         }
 
         .intro h1 {
-            font-size: 3.5rem;
+            font-size: 5rem;
         }
 
         .intro h3 {
@@ -155,23 +157,21 @@
 
     /* Mobile */
     @media (max-width: 768px) {
-        section {
-            padding-top: 80px;
-        }
 
         .intro {
-            grid-column: span 12;
+            grid-column: span 9;
             margin: 1rem 0 1.5rem 0;
         }
 
         .intro h1 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             line-height: 1.1;
         }
 
         .intro h3 {
             font-size: 1.1rem;
             line-height: 1.3;
+         
         }
 
         .intro h3 br {
@@ -207,7 +207,7 @@
         }
 
         .intro h1 {
-            font-size: 2rem;
+            font-size: 3rem;
         }
 
         .intro h3 {

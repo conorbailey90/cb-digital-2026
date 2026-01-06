@@ -47,6 +47,6 @@ html, body{
   .line{
         height: 1px;
         width: 100%;
-        background-color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.262);
         grid-column: span 12;
     }

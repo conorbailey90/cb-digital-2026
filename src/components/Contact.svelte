@@ -27,25 +27,46 @@
     isSubmitting = true;
     submitStatus = null;
 
-    // Simulate form submission
-    setTimeout(() => {
-      isSubmitting = false;
-      submitStatus = 'success';
-      
-      // Reset form after successful submission
-      formData = {
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
-      };
+    try {
+      const response = await fetch('https://formspree.io/f/xbdlnjoa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-      // Clear success message after 5 seconds
+      if (response.ok) {
+        isSubmitting = false;
+        submitStatus = 'success';
+        alert('Many thanks for your message. We will be in touch soon!')
+        
+        // Reset form after successful submission
+        formData = {
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: ''
+        };
+
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          submitStatus = null;
+        }, 5000);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      isSubmitting = false;
+      submitStatus = 'error';
+      console.error('Form submission error:', error);
+      
+      // Clear error message after 5 seconds
       setTimeout(() => {
         submitStatus = null;
       }, 5000);
-    }, 1500);
+    }
   }
 </script>
 
@@ -68,7 +89,7 @@
             </svg>
             <div>
               <h5>Email</h5>
-              <a href="mailto:hello@example.com">hello@example.com</a>
+              <a href="mailto:hello@example.com">conbailey90@gmail.com</a>
             </div>
           </div>
 
@@ -78,7 +99,7 @@
             </svg>
             <div>
               <h5>Location</h5>
-              <p>Nuneaton, England, UK</p>
+              <p>Billericay, Essex, UK</p>
             </div>
           </div>
         </div>
@@ -160,6 +181,15 @@
               <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
             </svg>
             Message sent successfully! I'll get back to you soon.
+          </div>
+        {/if}
+
+        {#if submitStatus === 'error'}
+          <div class="error-message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff6b6b" viewBox="0 0 256 256">
+              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path>
+            </svg>
+            Failed to send message. Please try again.
           </div>
         {/if}
       </form>
@@ -335,6 +365,17 @@
     background: rgba(244, 164, 132, 0.1);
     border: 1px solid #f4a484;
     color: #f4a484;
+    font-size: 0.875rem;
+  }
+
+  .error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
     font-size: 0.875rem;
   }
 

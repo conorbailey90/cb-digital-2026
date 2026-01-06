@@ -31,7 +31,7 @@
     .line {
         grid-column: span 12;
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+     
         margin-bottom: 2rem;
     }
 
