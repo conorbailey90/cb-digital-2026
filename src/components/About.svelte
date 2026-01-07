@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
     import Container from "./Container.svelte";
     import { base } from '$app/paths';
+    import { reveal } from '$lib/actions/reveal';
 
     const aboutSections = [
         {
@@ -139,7 +140,7 @@
         <div class="line"></div>
 
         {#each aboutSections as section}
-            <div class="about_container">
+            <div use:reveal class="about_container">
                 <div class="about_item">
                     <div class="section_title">
                         <h3>{@html section.title}</h3>

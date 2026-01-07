@@ -57,7 +57,7 @@
     }
 
     .footer-brand h3 {
-        font-size: 2rem;
+        font-size: 4rem;
         margin: 0;
     }
 
@@ -178,7 +178,7 @@
         }
 
         .footer-brand h3 {
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
 
         .footer-bottom {

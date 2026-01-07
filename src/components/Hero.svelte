@@ -4,6 +4,7 @@
     import { onMount } from 'svelte';
     import Container from "./Container.svelte";
     import { base } from '$app/paths';
+    import { reveal } from '$lib/actions/reveal';
 
     let image;
 
@@ -39,7 +40,7 @@
 
 <section id="home" data-bg-color="#000000" data-text-color="#FFFFFF">
     <Container>
-        <div class="intro">
+        <div use:reveal class="intro">
             <h1 class="morganite">CB DIGITAL</h1><br/>
             <h3>Elevate Your Business <br />with Sleek, Modern Web Design</h3><br/>
             <p>We create clean, fast, and mobile-friendly websites with reliable hosting solutions, designed to showcase your small business with clarity and style, effortlessly attracting and engaging your customers.</p><br/>

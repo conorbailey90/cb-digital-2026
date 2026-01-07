@@ -1,6 +1,7 @@
 <script>
 	import Container from "./Container.svelte";
     import { base } from "$app/paths";
+    import { reveal } from '$lib/actions/reveal';
 
     const projects = [
         {
@@ -41,17 +42,28 @@
 <section id="projects" data-bg-color="#000000" data-text-color="#FFFFFF">
     <Container>
         <div class="header">
-            <h4>Projects</h4>
+            <h4 use:reveal>Projects</h4>
         </div>
-        <div class="line"></div>
+        <div class="line" use:reveal={{ delay: 100 }}></div>
         
         <div class="projects-grid">
             {#each projects as project, i}
-                <article class="project-card">
+                <article 
+                    use:reveal={{ 
+                        delay: i * 150, 
+                        duration: 800,
+                        threshold: 0.15 
+                    }} 
+                    class="project-card"
+                >
                     <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
                         <div class="image-wrapper">
                             <div class="image-container">
-                                <img src="{base}/images/{project.image}" alt="{project.title}">
+                                <img 
+                                    src="{base}/images/{project.image}" 
+                                    alt="{project.title}"
+                                    loading="lazy"
+                                >
                             </div>
                             <div class="overlay">
                                 <span class="view-project">View Project →</span>
@@ -82,9 +94,14 @@
 
     .header {
         display: flex;
-      
         grid-column: span 12;
- 
+    }
+
+    .line {
+        grid-column: span 12;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: 2rem;
     }
     
     .projects-grid {
@@ -96,6 +113,10 @@
 
     .project-card {
         position: relative;
+        /* GPU acceleration for smoother animations */
+        will-change: transform, opacity;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     .project-link {
@@ -112,12 +133,17 @@
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.1);
         margin-bottom: 1.5rem;
+        /* Contain layout shifts */
+        contain: layout style paint;
     }
 
     .image-container {
         width: 100%;
         height: 100%;
         transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        /* GPU acceleration */
+        will-change: transform;
+        transform: translateZ(0);
     }
 
     .image-container img {
@@ -137,6 +163,7 @@
         padding: 2rem;
         opacity: 0;
         transition: opacity 0.4s ease;
+        pointer-events: none;
     }
 
     .view-project {
@@ -227,7 +254,25 @@
 
         .project-title {
             font-size: 1.1rem;
-        
+        }
+
+        /* Reduce animations on mobile for better performance */
+        .project-card {
+            will-change: auto;
+        }
+
+        .image-container {
+            will-change: auto;
+        }
+    }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .image-container,
+        .overlay,
+        .view-project,
+        .service-item {
+            transition: none;
         }
     }
 </style>
