@@ -151,17 +151,7 @@
         font-size: 0.875rem;
         color: rgba(255, 255, 255, 0.5);
     }
-
-    .footer-bottom a {
-        color: rgba(255, 255, 255, 0.5);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .footer-bottom a:hover {
-        color: #f4a484;
-    }
-
+   
     /* Tablet */
     @media (max-width: 1024px) {
         .footer-brand,
