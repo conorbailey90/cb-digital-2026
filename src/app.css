@@ -27,6 +27,8 @@
     text-decoration: none;
     font-style: normal;
     list-style: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
 }
 
