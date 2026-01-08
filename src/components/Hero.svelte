@@ -71,11 +71,8 @@
     }
 
     .intro h1 {
-        font-size: 6rem;
-        background: linear-gradient(to top, #949494 0%, #e7e7e7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        font-size: 7rem;
+        color:white
     }
 
     .intro h3 {
@@ -140,7 +137,7 @@
         }
 
         .intro h1 {
-            font-size: 5rem;
+            font-size: 6rem;
         }
 
         .intro h3 {
@@ -165,7 +162,7 @@
         }
 
         .intro h1 {
-            font-size: 4rem;
+            font-size: 6rem;
             line-height: 1.1;
         }
 
@@ -208,7 +205,7 @@
         }
 
         .intro h1 {
-            font-size: 3rem;
+            font-size: 6rem;
         }
 
         .intro h3 {
