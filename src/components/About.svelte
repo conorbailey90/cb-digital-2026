@@ -4,20 +4,20 @@
     import { base } from '$app/paths';
     import { reveal } from '$lib/actions/reveal';
 
-    const aboutSections = [
+const aboutSections = [
         {
             title: 'Bespoke websites designed <br> to elevate your business.',
-            text: 'CB Digital specialises in clean, minimal web design that communicates clearly and looks sharp on every device. Each website is purpose-built — no templates, no clutter — just custom design that reflects your brand and delivers a smooth, engaging user experience.',
+            text: 'CB Digital specialises in clean, minimal web design that communicates clearly and looks sharp on every device. Each website is purpose-built — no templates, no clutter — just custom design that reflects your brand and delivers a smooth, engaging user experience. From initial concepts through to final polish, every detail is crafted to ensure your site not only looks exceptional but serves your business goals. Whether you need to capture leads, showcase your portfolio, or establish credibility in your industry, your website will be designed with intention and built to make an impact from the first visit.',
               img: '/images/ebp.gif'
         },
         {
             title: 'Modern development <br> with performance in mind.',
-            text: 'Every site is built using best-in-class tools and frameworks to ensure fast load times, responsive layouts, and long-term maintainability. Whether it\'s a simple brochure site or a more complex solution, development is handled with precision to ensure performance, accessibility, and SEO readiness from day one.',
+            text: 'Every site is built using best-in-class tools and frameworks to ensure fast load times, responsive layouts, and long-term maintainability. Whether it\'s a simple brochure site or a more complex solution, development is handled with precision to ensure performance, accessibility, and SEO readiness from day one. Clean code architecture means your site will scale as your business grows, and search engines will love it too. Speed matters — visitors expect pages to load instantly, and Google rewards sites that deliver. That\'s why performance isn\'t an afterthought here, it\'s built into the foundation of every project, giving you a competitive edge in both user experience and search rankings.',
               img: '/images/faceworx.gif'
         },
         {
             title: 'Fully managed hosting <br> and ongoing support.',
-            text: 'CB Digital offers reliable, secure hosting options with technical support and site maintenance included. From setup to launch and beyond, everything is handled to keep your website running smoothly — including updates, backups, and performance monitoring — so you can focus on your business.',
+            text: 'CB Digital offers reliable, secure hosting options with technical support and site maintenance included. From setup to launch and beyond, everything is handled to keep your website running smoothly — including updates, backups, and performance monitoring — so you can focus on your business. No need to worry about technical issues, security patches, or downtime. You\'ll have peace of mind knowing your site is in safe hands, with proactive monitoring and rapid response if anything needs attention. As your business evolves, your site can too — whether that means adding new features, refreshing content, or optimising for better results, ongoing support ensures your digital presence stays current and effective.',
             img: '/images/omg1.avif'
         },
     ]
@@ -88,9 +88,9 @@
             // Draw golden blob with blur
             // @ts-ignore
             const gradient = ctx.createRadialGradient(blobX, blobY, 0, blobX, blobY, blobRadius);
-            gradient.addColorStop(0, 'rgba(218, 165, 32, 0.8)');
-            gradient.addColorStop(0.5, 'rgba(218, 165, 32, 0.4)');
-            gradient.addColorStop(1, 'rgba(218, 165, 32, 0)');
+            gradient.addColorStop(0, 'rgba(244, 164, 132, 0.8)');
+            gradient.addColorStop(0.5, 'rgba(244, 164, 132, 0.4)');
+            gradient.addColorStop(1, 'rgba(244, 164, 132, 0)');
             
             // @ts-ignore
             ctx.filter = 'blur(20px)';

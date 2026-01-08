@@ -104,7 +104,7 @@
         width: 110%;
         position: relative;
         grid-column: span 12;
-        height: 400px;
+        height: 500px;
     }
 
     img {
